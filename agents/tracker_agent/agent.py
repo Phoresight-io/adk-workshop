@@ -4,7 +4,7 @@ from .tools import add_grant, add_note, get_deadlines, get_pipeline, update_stat
 
 root_agent = Agent(
     name="tracker_agent",
-    model="gemini-2.0-flash",
+    model="gemini-1.5-flash",
     description=(
         "Tracks non-dilutive grant applications for underrepresented founders, "
         "including BIPOC-, women-, veteran-, and LGBTQ+-led businesses."
