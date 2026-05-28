@@ -115,6 +115,30 @@ Or open the web UI:
 adk web
 ```
 
+## Deploying to Vertex AI Agent Engine
+
+Use `adk deploy agent_engine` to push any agent to a managed, scalable endpoint on Vertex AI.
+
+```bash
+PROJECT_ID=your_gcp_project_id
+LOCATION_ID=us-central1
+
+adk deploy agent_engine \
+    --project=$PROJECT_ID \
+    --region=$LOCATION_ID \
+    --display_name="Grant Tracker Agent" \
+    agents/tracker_agent
+```
+
+After deployment the command prints a **resource name** of the form:
+```
+projects/<PROJECT_ID>/locations/<LOCATION_ID>/reasoningEngines/<ENGINE_ID>
+```
+Save that ID — you'll need it to call the agent programmatically via the Vertex AI SDK.
+
+> **Note:** Cloud Build and Cloud Run APIs must be enabled (see quick start above).
+> Deployment typically takes 3–5 minutes.
+
 ## Adding tools
 
 1. Define a new function in `agents/root_agent/tools.py`.
