@@ -30,12 +30,43 @@ requirements.txt
    pip install -r requirements.txt
    ```
 
-3. **Configure credentials**
+3. **Configure credentials** — choose one of the two options below.
 
-   ```bash
-   cp .env.example .env
-   # Open .env and set GOOGLE_API_KEY (or Vertex AI vars)
-   ```
+### Option A — Vertex AI + Application Default Credentials (recommended)
+
+ADK reads ADC automatically when `GOOGLE_GENAI_USE_VERTEXAI=true`. No API key file required.
+
+```bash
+# Install the gcloud CLI: https://cloud.google.com/sdk/docs/install
+
+# Authenticate your user account
+gcloud auth login
+
+# Write application default credentials (what ADK / the SDK reads at runtime)
+gcloud auth application-default login
+
+# Set your default project
+gcloud config set project YOUR_PROJECT_ID
+
+# Verify
+gcloud config list
+```
+
+Then copy and edit the env file:
+
+```bash
+cp .env.example .env
+# Set GOOGLE_CLOUD_PROJECT and GOOGLE_CLOUD_LOCATION; leave GOOGLE_GENAI_USE_VERTEXAI=true
+```
+
+### Option B — Google AI Studio API key
+
+```bash
+cp .env.example .env
+# Comment out the Vertex AI block and set GOOGLE_API_KEY instead
+```
+
+Obtain a key at <https://aistudio.google.com/app/apikey>.
 
 ## Running the agent
 
