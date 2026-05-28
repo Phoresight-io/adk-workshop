@@ -2,7 +2,7 @@ from google.adk.agents import Agent
 
 from .tools import add_grant, add_note, get_deadlines, get_pipeline, update_status
 
-tracker_agent = Agent(
+root_agent = Agent(
     name="tracker_agent",
     model="gemini-2.0-flash",
     description=(
