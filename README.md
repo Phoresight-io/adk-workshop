@@ -15,7 +15,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 
 # Install
-pip install google-adk>=2.0.0 python-dotenv
+pip install "google-adk>=2.0.0" python-dotenv
 
 # Credentials
 gcloud auth login
