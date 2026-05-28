@@ -22,6 +22,12 @@ gcloud auth login
 gcloud auth application-default login
 gcloud config set project YOUR_PROJECT_ID
 
+# Enable required APIs
+gcloud services enable \
+  aiplatform.googleapis.com \
+  run.googleapis.com \
+  cloudbuild.googleapis.com
+
 # Copy and verify env
 cp .env.example .env
 
