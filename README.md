@@ -25,6 +25,7 @@ gcloud config set project YOUR_PROJECT_ID
 # Enable required APIs
 gcloud services enable \
   aiplatform.googleapis.com \
+  cloudresourcemanager.googleapis.com \
   run.googleapis.com \
   cloudbuild.googleapis.com
 
