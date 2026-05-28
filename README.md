@@ -3,6 +3,32 @@
 A starter scaffold for building agents with the
 [Google Agent Development Kit (ADK)](https://google.github.io/adk-docs/).
 
+## Quick start
+
+```bash
+# Clone and enter
+git clone https://github.com/Phoresight-io/adk-workshop.git
+cd adk-workshop
+
+# Virtual env
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Install
+pip install google-adk>=2.0.0 python-dotenv
+
+# Credentials
+gcloud auth login
+gcloud auth application-default login
+gcloud config set project YOUR_PROJECT_ID
+
+# Copy and verify env
+cp .env.example .env
+
+# Run
+adk run agents/root_agent
+```
+
 ## Project structure
 
 ```
