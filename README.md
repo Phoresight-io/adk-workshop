@@ -85,11 +85,12 @@ gcloud config set project YOUR_PROJECT_ID
 gcloud config list
 ```
 
-Then copy and edit the env file:
+Then copy and patch the env file with your project details:
 
 ```bash
 cp .env.example .env
-# Set GOOGLE_CLOUD_PROJECT and GOOGLE_CLOUD_LOCATION; leave GOOGLE_GENAI_USE_VERTEXAI=true
+sed -i 's/your-gcp-project-id/YOUR_PROJECT_ID/' .env
+sed -i 's/your-gcp-region/us-central1/' .env
 ```
 
 ### Option B — Google AI Studio API key
